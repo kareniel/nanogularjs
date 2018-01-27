@@ -1,0 +1,23 @@
+{
+  "name": "nanogularjs",
+  "version": "0.1.0",
+  "description": "a smaller implementation of angular.js 1.5.x",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kareniel/nanogularjs.git"
+  },
+  "keywords": [
+    "angularjs",
+    "nano"
+  ],
+  "author": "kareniel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kareniel/nanogularjs/issues"
+  },
+  "homepage": "https://github.com/kareniel/nanogularjs#readme"
+}
