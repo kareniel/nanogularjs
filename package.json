@@ -4,11 +4,16 @@
   "description": "a smaller implementation of angular.js 1.5.x",
   "main": "src/index.js",
   "scripts": {
-    "test": "node test"
+    "start": "budo src/app.js:bundle.js --live --dir src --pushstate"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kareniel/nanogularjs.git"
+  },
+  "standard": {
+    "globals": [
+      "angular"
+    ]
   },
   "keywords": [
     "angularjs",
@@ -19,5 +24,17 @@
   "bugs": {
     "url": "https://github.com/kareniel/nanogularjs/issues"
   },
-  "homepage": "https://github.com/kareniel/nanogularjs#readme"
+  "homepage": "https://github.com/kareniel/nanogularjs#readme",
+  "dependencies": {
+    "document-ready": "^2.0.1",
+    "fn-args": "^3.0.0",
+    "nanohref": "^3.0.1",
+    "nanolocation": "^1.0.0",
+    "nanoquery": "^1.2.0",
+    "nanorouter": "^3.0.1"
+  },
+  "devDependencies": {
+    "budo": "^10.0.4",
+    "standard": "^10.0.3"
+  }
 }
