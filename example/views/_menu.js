@@ -3,7 +3,7 @@ module.exports = function menu () {
     <header>
       <h1>nanogularjs-example</h1>
       <ul>
-        <li><a href="/">first page</a></li>
+        <li><a href="/">home page</a></li>
         <li><a href="/2">second page</a></li>
       </ul>
     </header>`
