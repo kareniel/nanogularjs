@@ -1,4 +1,5 @@
 var assert = require('assert')
+var documentReady = require('document-ready')
 var $ = require('./Dollar')
 var Injector = require('./Injector')
 var Module = require('./Module')
@@ -6,6 +7,13 @@ var Module = require('./Module')
 function Angular () {
   if (!(this instanceof Angular)) return new Angular()
   this.loadedModules = {}
+}
+
+Angular.prototype.mount = function (selector, modules) {
+  documentReady(function () {
+    var el = document.querySelector(selector)
+    this.bootstrap(el, modules)
+  })
 }
 
 Angular.prototype.module = function (name, modules) {
