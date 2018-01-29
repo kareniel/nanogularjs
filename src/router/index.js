@@ -8,9 +8,8 @@ module.exports = function (angular) {
   var requires = []
   var router = angular.module(name, requires)
 
-  router.provider(require('router.provider'))
   router.service('router.service')
-  router.view('', require('./router.component'))
+  router.component('', require('./router.component'))
   router.run(require('./router'))
 
   return router.name

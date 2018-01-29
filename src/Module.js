@@ -1,5 +1,6 @@
-var noop = function () {}
+var documentReady = require('document-ready')
 var { isFunction } = require('./utils')
+var noop = function () {}
 
 function Module (name, requires, configFn) {
   if (!(this instanceof Module)) return new Module(name, requires, configFn)
@@ -32,6 +33,13 @@ function Module (name, requires, configFn) {
   }
 
   if (configFn) this.config(configFn)
+}
+
+Module.prototype.mount = function (selector, modules) {
+  documentReady(function () {
+    var el = document.querySelector(selector)
+    this.bootstrap(el, modules)
+  })
 }
 
 Module.prototype.info = noop

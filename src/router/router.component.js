@@ -19,7 +19,7 @@ function RouterComponent ($rootScope, $scope, $element, $compile) {
   }
 
   ctrl.update = function () {
-    elForHref(ctrl.state.href)
+    // elForHref(ctrl.state.href)
     var el = ctrl.createElement()
     var compiledEl = $compile(el)($scope.$parent)
 

@@ -10,11 +10,14 @@ function Injector (cache, factory) {
 }
 
 Injector.prototype.get = function (name) {
+  console.log('get', name)
   var module = this.modules[name]
+  if (!module) throw new Error(`Injector: '${name}' not found!`)
   return module
 }
 
 Injector.prototype.invoke = function (fn, self, locals, name) {
+  console.log('invoke')
   if (typeof locals === 'string') {
     name = locals
     locals = null
@@ -51,6 +54,7 @@ Injector.prototype.instantiate = function (constructor, locals) {
 }
 
 Injector.prototype._getDependencies = function (fn, locals, serviceName) {
+  console.log(fn, locals, serviceName)
   var names = this.annotate(fn)
   var dependencies = names.map(name => {
     if (locals && locals.hasOwnProperty(name)) { return locals[name] }
